@@ -1,0 +1,349 @@
+/**
+ * WooCommerce Checkout Button Styles - Minimalistic Design
+ * 
+ * Clean, modern styling for payment buttons while maintaining
+ * the site's visual identity with the gold (#d8a81b) accent color
+ */
+
+/* ============================================
+   Main Payment Container
+   ============================================ */
+.payment-buttons-container,
+#custom-payment-buttons-wrapper {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    clear: both;
+}
+
+/* ============================================
+   Express Checkout Container (Stripe, Apple Pay, Google Pay)
+   ============================================ */
+.express-checkout-container,
+#buttons-container {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.express-checkout-inner {
+    width: 100%;
+    display: block;
+}
+
+/* Stripe Express Checkout Element Styling */
+#wc-stripe-express-checkout-element {
+    width: 100% !important;
+    display: block !important;
+    position: relative !important;
+}
+
+/* Ensure iframes and observers stay inside container */
+#buttons-container iframe,
+#buttons-container .p-HeightObserverProvider {
+    width: 100% !important;
+    position: relative !important;
+    display: block !important;
+}
+
+/* Stripe Payment Request Button specific */
+.wc-stripe-express-checkout-element,
+.payment-request-button-wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ============================================
+   PayPal Container Styles
+   ============================================ */
+.paypal-container {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.ppcp-messages-container {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#ppcp-messages,
+.ppcp-messages {
+    width: 100% !important;
+    margin-bottom: 10px;
+}
+
+.paypal-button-container,
+.digital-wallet-container {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* ============================================
+   Universal Button Styles - Clean & Minimalistic
+   ============================================ */
+
+/* Google Pay Button */
+.gpay-button-container,
+.gpay-button,
+.googlepay-button-container {
+    width: 100% !important;
+    display: block !important;
+    height: 48px !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+/* Apple Pay Button */
+.apple-pay-button,
+.apple-pay-button-wrapper {
+    width: 100% !important;
+    height: 48px !important;
+    -webkit-appearance: -apple-pay-button !important;
+    -apple-pay-button-style: black !important;
+    border-radius: 8px !important;
+}
+
+/* PayPal Buttons */
+.paypal-buttons,
+#ppc-button-ppcp-gateway {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* ============================================
+   Separator Styles
+   ============================================ */
+.payment-separator {
+    text-align: center;
+    margin: 25px 0;
+    position: relative;
+}
+
+.payment-separator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e9ecef;
+}
+
+.payment-separator span {
+    background: #fff;
+    padding: 0 15px;
+    position: relative;
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   Add to Cart Button - Minimalistic Style
+   ============================================ */
+.single_add_to_cart_button {
+    background-color: #d8a81b !important;
+    color: #2B2823 !important;
+    border: none !important;
+    padding: 14px 35px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer;
+    text-transform: none !important;
+    letter-spacing: 0.3px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.single_add_to_cart_button:hover {
+    background-color: #b7780d !important;
+    color: #fff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(216, 168, 27, 0.25);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+    .payment-buttons-container {
+        margin-top: 20px;
+    }
+    
+    .gpay-button-container,
+    .apple-pay-button {
+        height: 44px !important;
+    }
+}
+
+/* ============================================
+   Loading States
+   ============================================ */
+.payment-processing {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.payment-processing::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #d8a81b;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   Hide Duplicate Elements
+   ============================================ */
+body.woocommerce-page .wc-stripe-express-checkout-button-wrapper {
+    display: none;
+}
+
+/* Ensure our container is visible */
+#custom-payment-buttons-wrapper {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* ============================================
+   Clean Typography for Product Page
+   ============================================ */
+.product-info h1.product_title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #2B2823;
+    line-height: 1.2;
+}
+
+.woocommerce-Price-amount {
+    font-size: 28px;
+    font-weight: 600;
+    color: #d8a81b;
+    margin: 20px 0;
+}
+
+.product-info .woocommerce-product-details__short-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6c757d;
+    margin-bottom: 25px;
+}
+
+/* ============================================
+   Fix Z-Index Issues
+   ============================================ */
+.woocommerce-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+#wc-stripe-express-checkout-element {
+    z-index: 100 !important;
+}
+
+/* Ensure Stripe iframe doesn't overflow */
+iframe[name^="__privateStripeFrame"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+}
+
+/* ============================================
+   Error Message Styling
+   ============================================ */
+.woocommerce-error,
+.woocommerce-message {
+    background: #fff;
+    border-left: 4px solid #d8a81b;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.woocommerce-error {
+    border-left-color: #dc3545;
+}
+
+/* ============================================
+   Checkout Page Specific Styles
+   ============================================ */
+.woocommerce-checkout #payment {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.woocommerce-checkout #payment h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2B2823;
+}
+
+/* Clean form inputs */
+.woocommerce form .form-row input[type="text"],
+.woocommerce form .form-row input[type="email"],
+.woocommerce form .form-row input[type="tel"],
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.woocommerce form .form-row input:focus,
+.woocommerce form .form-row textarea:focus,
+.woocommerce form .form-row select:focus {
+    outline: none;
+    border-color: #d8a81b;
+    box-shadow: 0 0 0 3px rgba(216, 168, 27, 0.1);
+}
+
+/* ============================================
+   Place Order Button
+   ============================================ */
+#place_order {
+    background-color: #d8a81b !important;
+    color: #2B2823 !important;
+    border: none !important;
+    padding: 16px 40px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    width: 100%;
+    margin-top: 20px;
+    transition: all 0.3s ease !important;
+    cursor: pointer;
+}
+
+#place_order:hover {
+    background-color: #b7780d !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(216, 168, 27, 0.3);
+}
